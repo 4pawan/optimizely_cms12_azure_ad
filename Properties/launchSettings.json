@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "optimizely_cms12_azure_ad": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5000/",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
