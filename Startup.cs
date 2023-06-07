@@ -66,6 +66,11 @@ public class Startup
         app.UseEndpoints(endpoints =>
         {
             endpoints.MapContent();
+            endpoints.MapGet("/util/login", context =>
+            {
+                context.Response.Redirect("/episerver/cms");
+                return Task.CompletedTask;
+            });
         });
     }
 }
