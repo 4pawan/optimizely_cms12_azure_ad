@@ -62,27 +62,23 @@ namespace optimizely_cms12_azure_ad
                options.Events.OnTokenValidated = context =>
                {
                    // enable to print claims debug information in the console
-                   var user = context.Principal.Identity;
+                   //var user = context.Principal.Identity;
 
-                   if (user != null)
-                   {
-                       if (user is ClaimsIdentity claimsIdentity)
-                       {
-                           //claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, "SSO"));
-                           //claimsIdentity.AddClaim(new Claim(ClaimTypes.Role, "WebAdmins"));
-                           claimsIdentity.AddClaim(new Claim(ClaimTypes.Email, claimsIdentity.Name));
-                           //claimsIdentity.AddClaim(new Claim(ClaimTypes.GivenName, "abc"));
-                           //claimsIdentity.AddClaim(new Claim(ClaimTypes.Surname, "atc"));
-                           context.Principal.AddIdentity(claimsIdentity);
-                       }
+                   //if (user != null)
+                   //{
+                   //    if (user is ClaimsIdentity claimsIdentity)
+                   //    {
+                   //        claimsIdentity.AddClaim(new Claim("roles", "WebAdmins"));
+                   //        context.Principal.AddIdentity(claimsIdentity);
+                   //    }
 
-                       //var claims = ((System.Security.Claims.ClaimsIdentity)context.Principal.Identity).Claims;
+                   //    //var claims = ((System.Security.Claims.ClaimsIdentity)context.Principal.Identity).Claims;
 
-                       //foreach (var claim in claims)
-                       //{
-                       //    Console.WriteLine($"{claim.Type}: {claim.Value}");
-                       //}
-                   }
+                   //    //foreach (var claim in claims)
+                   //    //{
+                   //    //    Console.WriteLine($"{claim.Type}: {claim.Value}");
+                   //    //}
+                   //}
                    return Task.FromResult(0);
 
                };
